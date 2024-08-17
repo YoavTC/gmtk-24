@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private bool useAnimation;
+    [SerializeField] private bool moveInAir;
+    [SerializeField] private bool animateInAir;
     [Header("Components")]
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rb;
     [Header("Movement")]
-    [SerializeField] private bool useAnimation;
     [SerializeField] private float jumpForce;
     [SerializeField] private float playerSpeed;
     private Vector2 movement;
@@ -33,25 +36,39 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isGrounded = IsGrounded();
+        if (moveInAir)
+        { 
+            GetMovementInput();
+        } else if (isGrounded) GetMovementInput();
         HandleMovement();
         HandleJumping();
     }
 
-    private void HandleMovement()
+    private void GetMovementInput()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+    }
 
+    private void HandleMovement()
+    {
         if (movement.x != 0)
         {
             if (movement.x > 0)
             {
-                if (useAnimation) animator.Play("walk");
+                if (useAnimation && (animateInAir || (!animateInAir && isGrounded)))
+                {
+                    animator.Play("walk");
+                }
                 rb.AddForce(Vector2.right * (playerSpeed * Time.deltaTime));
             }
             else
             {
-                if (useAnimation) animator.Play("walkBackwards");
+                if (useAnimation && (animateInAir || (!animateInAir && isGrounded)))
+                {
+                    animator.Play("walkBackwards");
+                }
                 rb.AddForce(Vector2.left * (playerSpeed * Time.deltaTime));
             }
         }
@@ -63,7 +80,6 @@ public class PlayerMovementController : MonoBehaviour
 
     private void HandleJumping()
     {
-        isGrounded = IsGrounded();
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce);
