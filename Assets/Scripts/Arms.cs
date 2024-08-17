@@ -23,8 +23,8 @@ public class Arms : MonoBehaviour
 
         if (Input.GetMouseButton(mouseButton))
         {
-            //rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotationZ, speed * Time.deltaTime));
-            rb.MoveRotation(rotationZ);
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotationZ, speed * Time.deltaTime));
+            // rb.MoveRotation(rotationZ);
         }
     }
 }
