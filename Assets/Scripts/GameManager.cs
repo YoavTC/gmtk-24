@@ -23,10 +23,10 @@ public class GameManager : Singleton<GameManager>
 		GetWeightAndMoneyValues();
 		
 		moneyBar.maxValue = shipWealth;
-		moneyBar.value = shipWealth;
+		moneyBar.value = 0f;
 		
 		weightBar.maxValue = shipWeight;
-		weightBar.value = shipWeight;
+		weightBar.value = 0f;
 	}
 	
 	public void ObjectDisposed(DisposableObject disposedObject) 
@@ -39,8 +39,8 @@ public class GameManager : Singleton<GameManager>
 	
 	private void UpdateBars() 
 	{
-		moneyBar.value = moneyBar.maxValue - disposedMoney;
-		weightBar.value = weightBar.maxValue - disposedWeight;
+		moneyBar.value = disposedMoney;
+		weightBar.value = disposedWeight;
 	}
 	
 	private void GetWeightAndMoneyValues() 
