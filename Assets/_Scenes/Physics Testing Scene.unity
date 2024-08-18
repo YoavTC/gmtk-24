@@ -153,6 +153,7 @@ MonoBehaviour:
   disposedWeight: 0
   moneyBar: {fileID: 753343399}
   weightBar: {fileID: 29717331}
+  barLerpSpeed: 0
 --- !u!4 &17332746
 Transform:
   m_ObjectHideFlags: 0
