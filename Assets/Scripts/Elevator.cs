@@ -1,6 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
+using System.Collections.Generic;
+
 
 public class Elevator : MonoBehaviour
 {
@@ -51,19 +53,32 @@ public class Elevator : MonoBehaviour
 	
 	private void UseElevator() 
 	{
+		Vector3 elevatorPosition = linkedElevator.transform.position;
+		Transform playerTransform = playerController.transform;
+		
 		foreach (Rigidbody2D rb in playerController.transform.GetComponentsInChildren<Rigidbody2D>()) 
 		{
 			rb.isKinematic = true;
 		}
 		
-		playerController.transform.position = linkedElevator.transform.position;
+		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
 		
-		//foreach (Transform limb in playerController.GetComponentsInChildren<Transform>()) 
-		//{
-		//	limb.localPosition += playerController.transform.position;
-		//}
+		playerTransform.position = elevatorPosition;
 		
-		foreach (Rigidbody2D rb in playerController.transform.GetComponentsInChildren<Rigidbody2D>()) 
+		foreach (Grab hand in hands)
+		{
+			if (hand.GetComponent<FixedJoint2D>()) 
+			{
+				Transform objectTransform = hand.GetComponent<FixedJoint2D>().connectedBody.transform;
+				
+				Vector2 objectOffset =  hand.transform.position - objectTransform.position;
+				Vector2 elevatorOffset = transform.position - elevatorPosition;
+				objectTransform.position = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
+				break;
+			}
+		}
+		
+		foreach (Rigidbody2D rb in playerTransform.GetComponentsInChildren<Rigidbody2D>()) 
 		{
 			rb.isKinematic = false;
 		}
