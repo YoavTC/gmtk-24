@@ -19,8 +19,6 @@ public class DisposableObject : MonoBehaviour
 		get { return weight; }
 	}
 	
-	[SerializeField] [ReadOnly] private bool isDisposable;
-	
 	public UnityEvent OnGrabbedEvent;
 	public UnityEvent OnReleasedEvent;
 	
@@ -34,18 +32,9 @@ public class DisposableObject : MonoBehaviour
 		OnReleasedEvent?.Invoke();
 	}
 	
-	private void GetDisposed() 
+	public void GetDisposed() 
 	{
 		GameManager.Instance.ObjectDisposed(this);
 		Destroy(gameObject);
-	}
-	
-	private void Update() 
-	{
-		float y = transform.position.y;
-		if (isDisposable) 
-		{
-			if (y <= -50f)  GetDisposed();
-		} else if (y >= 0f) isDisposable = true;
 	}
 }

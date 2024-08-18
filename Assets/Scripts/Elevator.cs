@@ -58,7 +58,8 @@ public class Elevator : MonoBehaviour
 		
 		foreach (Rigidbody2D rb in playerController.transform.GetComponentsInChildren<Rigidbody2D>()) 
 		{
-			rb.isKinematic = true;
+			//rb.isKinematic = true;
+			rb.bodyType = RigidbodyType2D.Kinematic;
 		}
 		
 		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
@@ -80,7 +81,8 @@ public class Elevator : MonoBehaviour
 		
 		foreach (Rigidbody2D rb in playerTransform.GetComponentsInChildren<Rigidbody2D>()) 
 		{
-			rb.isKinematic = false;
+			rb.bodyType = RigidbodyType2D.Dynamic;
+			//rb.isKinematic = false;
 		}
 	}
 }
