@@ -9,6 +9,10 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rb;
+	public Rigidbody2D _rb 
+	{
+		get {return rb;}
+	}
     [Header("Movement")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float playerSpeed;
@@ -32,8 +36,7 @@ public class PlayerMovementController : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
+	
     void Update()
     {
         isGrounded = IsGrounded();
