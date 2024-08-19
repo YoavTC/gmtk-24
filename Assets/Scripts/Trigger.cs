@@ -28,11 +28,9 @@ public class Trigger : MonoBehaviour
 			Type scriptType = Type.GetType(_otherType.Name);
 			if (scriptType != null) 
 			{
-				Debug.Log("type: " + scriptType);
 				Component scriptComponent = other.transform.GetComponent(scriptType);
 				if (scriptComponent != null) 
 				{
-					Debug.Log("component: " + scriptComponent);
 					MethodInfo method = scriptType.GetMethod(otherObjectFunctionToExecute);
 					if (method != null) 
 					{

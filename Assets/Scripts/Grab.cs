@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     [Tag] [SerializeField] public string objectsTag;
+	[Tag] [SerializeField] public string npcTag;
     [SerializeField] private bool isHolding;
     [SerializeField] private int mouseButton;
 
@@ -23,9 +24,10 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (isHolding && other.gameObject.CompareTag(objectsTag))
+		Transform otherTransform = other.transform;
+        if (isHolding && (otherTransform.root.gameObject.CompareTag(objectsTag) || otherTransform.root.gameObject.CompareTag(npcTag)))
         {
-            Rigidbody2D otherRb = other.transform.GetComponent<Rigidbody2D>();
+            Rigidbody2D otherRb = otherTransform.GetComponent<Rigidbody2D>();
             FixedJoint2D fixedJoint2D = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
             if (otherRb != null && fixedJoint2D != null)
             {
