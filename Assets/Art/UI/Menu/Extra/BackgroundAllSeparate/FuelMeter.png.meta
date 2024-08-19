@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FuelMeter_0: -4693433767625151494
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
