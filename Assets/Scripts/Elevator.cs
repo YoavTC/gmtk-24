@@ -12,6 +12,7 @@ public class Elevator : MonoBehaviour
     private Transform prompt;
 	
 	[SerializeField] [Tag] private string npcTag;
+	[SerializeField] private string[] unsafeLayerMasks;
 	
 	private PlayerMovementController playerController;
 	[SerializeField] private Elevator linkedElevator;
@@ -63,9 +64,34 @@ public class Elevator : MonoBehaviour
 	{
 		Transform playerTransform = playerController.transform;
 		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
+		LayerMask unsafeLayers = LayerMask.GetMask(unsafeLayerMasks);
 		
 		SetRigidbody2DSleepState(playerTransform, true);
-		playerTransform.position = elevatorPosition;
+		//playerTransform.position = elevatorPosition;
+		
+		bool safe = false;
+		int maxTries = 100;
+		int currentTries = 0;
+				
+		while (!safe)
+		{
+			if (!Physics2D.OverlapPoint(elevatorPosition, unsafeLayers))
+			{
+				Debug.Log("Found safe space on the " + currentTries + " attempt!");
+				safe = true;
+				playerTransform.position = elevatorPosition;
+			}
+			
+			if (currentTries >= maxTries) 
+			{
+				Debug.Log("Reached max tries...");
+				safe = true;
+			}
+			
+			currentTries++;
+			elevatorPosition.x += 0.5f;
+		}
+		
 		SetRigidbody2DSleepState(playerTransform, false);
 		
 
@@ -74,11 +100,13 @@ public class Elevator : MonoBehaviour
 			if (hand.GetComponent<FixedJoint2D>()) 
 			{
 				Transform objectTransform = hand.GetComponent<FixedJoint2D>().connectedBody.transform;
+				Vector2 exitPosition = (Vector2) linkedElevatorObjectExit.position;
 				
 				//Vector2 objectOffset =  hand.transform.position - objectTransform.position;
 				//Vector2 elevatorOffset = transform.position - elevatorPosition;
 				//Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
 				
+				//Check position for other objects
 				
 				SetRigidbody2DSleepState(objectTransform.root, true);
 				objectTransform.root.position = linkedElevatorObjectExit.position;
