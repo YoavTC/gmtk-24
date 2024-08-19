@@ -17,8 +17,7 @@ public class Elevator : MonoBehaviour
 	[SerializeField] private Elevator linkedElevator;
 	[SerializeField] [ReadOnly] private bool canUse;
 	private Vector3 elevatorPosition;
-	
-	[SerializeField] [ReadOnly] private bool recursionDone;
+
 	
     void Start()
     {
@@ -54,113 +53,82 @@ public class Elevator : MonoBehaviour
 		if (canUse && Input.GetButtonDown("Use")) 
 		{
 			Debug.Log("Used Elevator");
-			StartCoroutine(UseElevator());
+			UseElevator();
 			canUse = false;
 		}
 	}
 	
-	private IEnumerator UseElevator() 
+	private void UseElevator() 
 	{
 		Transform playerTransform = playerController.transform;
 		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
 		
-		ChangeRigidBody2DBodyTpe(playerTransform, RigidbodyType2D.Kinematic);
+		SetRigidbody2DSleepState(playerTransform, true);
+		//playerTransform.position = elevatorPosition;
+		TeleportPlayer(playerTransform, elevatorPosition);
+		SetRigidbody2DSleepState(playerTransform, false);
 		
-		playerTransform.position = elevatorPosition;
-		
+
 		foreach (Grab hand in hands)
 		{
 			if (hand.GetComponent<FixedJoint2D>()) 
 			{
 				Transform objectTransform = hand.GetComponent<FixedJoint2D>().connectedBody.transform;
 				
-				ChangeRigidBody2DBodyTpe(objectTransform.root, RigidbodyType2D.Kinematic);
+				SetRigidbody2DSleepState(objectTransform.root, true);
 				
-				//Vector2 objectOffset =  hand.transform.position - objectTransform.position;
-				//Vector2 elevatorOffset = transform.position - elevatorPosition;
-				//Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
+				Vector2 objectOffset =  hand.transform.position - objectTransform.position;
+				Vector2 elevatorOffset = transform.position - elevatorPosition;
+				Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
 				
-				ToggleComponentsRecursively(objectTransform.root, false, hand.transform.position);
 				
-				yield return new WaitUntil(() => recursionDone);
+				//objectTransform.root.position = targetPosition;
+				TeleportPlayer(objectTransform.root, targetPosition);
 				
-				//objectTransform.position = targetPosition;
-				
-				ToggleComponentsRecursively(objectTransform.root, true);
-				yield return new WaitUntil(() => recursionDone);
-				ChangeRigidBody2DBodyTpe(objectTransform.root, RigidbodyType2D.Dynamic);
+				SetRigidbody2DSleepState(objectTransform.root, false);
 				
 				break;
 			}
 		}
-		
-		ChangeRigidBody2DBodyTpe(playerTransform, RigidbodyType2D.Dynamic);
 	}
 	
-	private void ChangeRigidBody2DBodyTpe(Transform targetRb, RigidbodyType2D bodyType)
+	private Dictionary<Transform, Vector3> offsets = new Dictionary<Transform, Vector3>();
+	
+	private void TeleportPlayer(Transform playerTransform ,Vector3 newPosition)
 	{
-		Debug.Log("Changing " + targetRb + " to: " + bodyType);
+		// Record offsets before moving the parent
+		RecordOffsets(playerTransform);
+
+		// Move the parent to the new position
+		playerTransform.position = newPosition;
+
+		// Move each child based on its recorded offset
+		foreach (var entry in offsets)
+		{
+			Transform child = entry.Key;
+			Vector3 offset = entry.Value;
+			child.position = playerTransform.position + offset;
+		}
+	}
+	
+	private void RecordOffsets(Transform parent)
+	{
+		offsets.Clear();  // Clear previous offsets
+
+		for (int i = 0; i < parent.childCount; i++)
+		{
+			Transform child = parent.GetChild(i);
+			Vector3 offset = child.position - parent.position;
+			offsets[child] = offset;
+		}
+	}
+	
+	private void SetRigidbody2DSleepState(Transform targetRb, bool sleep)
+	{
 		foreach (Rigidbody2D rb in targetRb.GetComponentsInChildren<Rigidbody2D>()) 
 		{
-			rb.bodyType = bodyType;
-		}
-	}
-	
-	private void ToggleComponentsRecursively(Transform targetTransform, bool enable)
-	{
-		recursionDone = false;
-		foreach (Transform child in targetTransform)
-		{
-			foreach (var component in child.GetComponents<Component>())
-			{
-				if (component is Behaviour behaviour)
-				{
-					behaviour.enabled = enable;
-				}
-				else if (component is Renderer renderer)
-				{
-					renderer.enabled = enable;
-				}
-				// Add more component types if necessary
-			}
-
-			// Recursive call for any children of this child
-			if (child.childCount == 0) 
-			{
-				Debug.Log("recursionDone");
-				recursionDone = true;
-			}
-			ToggleComponentsRecursively(child, enable);
-		}
-	}
-	
-	private void ToggleComponentsRecursively(Transform targetTransform, bool enable, Vector3 handPosition)
-	{
-		recursionDone = false;
-		foreach (Transform child in targetTransform)
-		{
-			Vector2 objectOffset =  handPosition - targetTransform.position;
-			Vector2 elevatorOffset = targetTransform.position - elevatorPosition;
-			Vector2 targetPosition = handPosition + (Vector3) objectOffset + (Vector3) elevatorOffset;
-			
-			foreach (var component in child.GetComponents<Component>())
-			{
-				if (component is Behaviour behaviour)
-				{
-					behaviour.enabled = enable;
-				}
-				else if (component is Renderer renderer)
-				{
-					renderer.enabled = enable;
-				}
-				// Add more component types if necessary
-			}
-			
-			child.position = targetPosition;
-
-			// Recursive call for any children of this child
-			if (child.childCount == 0) {recursionDone = true; Debug.Log("recursionDone");}
-			ToggleComponentsRecursively(child, enable);
+			if (sleep) rb.Sleep();
+			else rb.WakeUp();
 		}
 	}
 }
