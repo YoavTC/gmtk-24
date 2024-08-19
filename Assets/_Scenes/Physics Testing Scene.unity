@@ -2629,6 +2629,7 @@ MonoBehaviour:
   npcTag: NPC
   unsafeLayerMasks:
   - Objects
+  unsafeCheckRadius: 1
   linkedElevator: {fileID: 1639868521}
   linkedElevatorObjectExit: {fileID: 537265793}
   canUse: 0
@@ -3175,6 +3176,7 @@ MonoBehaviour:
   npcTag: NPC
   unsafeLayerMasks:
   - Objects
+  unsafeCheckRadius: 1
   linkedElevator: {fileID: 1285182332}
   linkedElevatorObjectExit: {fileID: 1286313954}
   canUse: 0

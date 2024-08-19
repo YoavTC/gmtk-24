@@ -7,18 +7,24 @@ using System.Collections;
 
 public class Elevator : MonoBehaviour
 {
+	[Header("Display")]
 	[SerializeField] private float promptBobSpeed;
 	[SerializeField] private float promptBobDistance;
     private Transform prompt;
 	
+	[Header("Settings")]
 	[SerializeField] [Tag] private string npcTag;
 	[SerializeField] private string[] unsafeLayerMasks;
+	[SerializeField] private float unsafeCheckRadius;
 	
-	private PlayerMovementController playerController;
+	[Header("Components")]
 	[SerializeField] private Elevator linkedElevator;
 	[SerializeField] private Transform linkedElevatorObjectExit;
 	[SerializeField] [ReadOnly] private bool canUse;
+	
+	private PlayerMovementController playerController;
 	private Vector3 elevatorPosition;
+	private LayerMask unsafeLayers;
 
 	
     void Start()
@@ -30,6 +36,7 @@ public class Elevator : MonoBehaviour
 		prompt.gameObject.SetActive(false);
 		
 		elevatorPosition = linkedElevator.transform.position;
+		unsafeLayers = LayerMask.GetMask(unsafeLayerMasks);
     }
 	
 	private void OnTriggerEnter2D(Collider2D other) 
@@ -54,7 +61,6 @@ public class Elevator : MonoBehaviour
 	{
 		if (canUse && Input.GetButtonDown("Use")) 
 		{
-			Debug.Log("Used Elevator");
 			UseElevator();
 			canUse = false;
 		}
@@ -64,35 +70,14 @@ public class Elevator : MonoBehaviour
 	{
 		Transform playerTransform = playerController.transform;
 		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
-		LayerMask unsafeLayers = LayerMask.GetMask(unsafeLayerMasks);
 		
-		SetRigidbody2DSleepState(playerTransform, true);
-		//playerTransform.position = elevatorPosition;
-		
-		bool safe = false;
-		int maxTries = 100;
-		int currentTries = 0;
-				
-		while (!safe)
+		Vector2 safePosition = FindSafePosition(elevatorPosition);
+		if (safePosition != Vector2.zero) 
 		{
-			if (!Physics2D.OverlapPoint(elevatorPosition, unsafeLayers))
-			{
-				Debug.Log("Found safe space on the " + currentTries + " attempt!");
-				safe = true;
-				playerTransform.position = elevatorPosition;
-			}
-			
-			if (currentTries >= maxTries) 
-			{
-				Debug.Log("Reached max tries...");
-				safe = true;
-			}
-			
-			currentTries++;
-			elevatorPosition.x += 0.5f;
+			SetRigidbody2DSleepState(playerTransform, true);
+			playerTransform.position = safePosition;
+			SetRigidbody2DSleepState(playerTransform, false);
 		}
-		
-		SetRigidbody2DSleepState(playerTransform, false);
 		
 
 		foreach (Grab hand in hands)
@@ -100,18 +85,19 @@ public class Elevator : MonoBehaviour
 			if (hand.GetComponent<FixedJoint2D>()) 
 			{
 				Transform objectTransform = hand.GetComponent<FixedJoint2D>().connectedBody.transform;
-				Vector2 exitPosition = (Vector2) linkedElevatorObjectExit.position;
 				
 				//Vector2 objectOffset =  hand.transform.position - objectTransform.position;
 				//Vector2 elevatorOffset = transform.position - elevatorPosition;
 				//Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
 				
 				//Check position for other objects
-				
-				SetRigidbody2DSleepState(objectTransform.root, true);
-				objectTransform.root.position = linkedElevatorObjectExit.position;
-				SetRigidbody2DSleepState(objectTransform.root, false);
-				
+				Vector2 objectSafePosition = FindSafePosition(linkedElevatorObjectExit.position);
+				if (objectSafePosition != Vector2.zero)
+				{
+					SetRigidbody2DSleepState(objectTransform.root, true);
+					objectTransform.root.position =objectSafePosition;
+					SetRigidbody2DSleepState(objectTransform.root, false);
+				}
 				break;
 			}
 		}
@@ -124,5 +110,33 @@ public class Elevator : MonoBehaviour
 			if (sleep) rb.Sleep();
 			else rb.WakeUp();
 		}
+	}
+	
+	private Vector2 FindSafePosition(Vector2 targetPosition)
+	{
+		bool safe = false;
+		int maxTries = 500;
+		int currentTries = 0;
+		
+		while (!safe)
+		{
+			if (!Physics2D.OverlapCircle(targetPosition, unsafeCheckRadius ,unsafeLayers))
+			{
+				Debug.Log("Found safe space on the " + currentTries + " attempt!");
+				safe = true;
+				return targetPosition;
+			}
+			
+			if (currentTries >= maxTries) 
+			{
+				Debug.Log("Reached max tries...");
+				safe = true;
+			}
+			
+			currentTries++;
+			targetPosition.x += 0.1f;
+		}
+		
+		return Vector2.zero;
 	}
 }
