@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 6c56d297ed8910c43a27651a631e80ea
+guid: ec4d0defa62799e4499f8b93154759fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7682768027033976039
-    second: Leaderboard_0
+      213: 7886631795410796208
+    second: Settings_0
   - first:
-      213: 3945673187167774463
-    second: Leaderboard_1
+      213: 2060365850352298717
+    second: Settings_1
   - first:
-      213: 5907392321037192411
-    second: Leaderboard_2
+      213: -5339635570483323969
+    second: Settings_2
   - first:
-      213: 6910857004349638361
-    second: Leaderboard_3
+      213: -2495782739550021130
+    second: Settings_3
   - first:
-      213: 2790295953593544103
-    second: Leaderboard_4
+      213: 8154524474551060708
+    second: Settings_4
   - first:
-      213: -7321475133324249365
-    second: Leaderboard_5
+      213: -2226280032217487599
+    second: Settings_5
   - first:
-      213: 8648959717203891599
-    second: Leaderboard_6
+      213: -8712572062712792050
+    second: Settings_6
   - first:
-      213: 2216636952609368800
-    second: Leaderboard_7
-  - first:
-      213: 1934842171081048971
-    second: Leaderboard_8
-  - first:
-      213: -3634372384398568947
-    second: Leaderboard_9
+      213: 5928216156305086978
+    second: Settings_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,12 +121,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Leaderboard_0
+      name: Settings_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 4
         y: 28
-        width: 30
+        width: 35
         height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,17 +136,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 91349e83f23516590800000000000000
-      internalID: -7682768027033976039
+      spriteID: 0bef2cf25d1f27d60800000000000000
+      internalID: 7886631795410796208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard_1
+      name: Settings_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 38
         y: 28
         width: 28
         height: 34
@@ -164,19 +158,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff62be0dbd8d1c630800000000000000
-      internalID: 3945673187167774463
+      spriteID: dda289913d3e79c10800000000000000
+      internalID: 2060365850352298717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard_2
+      name: Settings_2
       rect:
         serializedVersion: 2
-        x: 57
+        x: 65
         y: 28
-        width: 32
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb1d4f3dbdc5e5b0800000000000000
+      internalID: -5339635570483323969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 62
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9d19452d23d5dd0800000000000000
+      internalID: -2495782739550021130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 28
+        width: 14
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,41 +224,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bdcca4c64064bf150800000000000000
-      internalID: 5907392321037192411
+      spriteID: 4e848d91ec0ba2170800000000000000
+      internalID: 8154524474551060708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard_3
+      name: Settings_5
       rect:
         serializedVersion: 2
-        x: 86
+        x: 119
         y: 28
-        width: 32
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d6c7c584db48ef50800000000000000
-      internalID: 6910857004349638361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Leaderboard_4
-      rect:
-        serializedVersion: 2
-        x: 116
-        y: 28
-        width: 27
+        width: 30
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -230,42 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ad272cd26f19b620800000000000000
-      internalID: 2790295953593544103
+      spriteID: 117a1252b1aaa11e0800000000000000
+      internalID: -2226280032217487599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard_5
+      name: Settings_6
       rect:
         serializedVersion: 2
-        x: 144
-        y: 28
-        width: 27
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be63a563825e46a90800000000000000
-      internalID: -7321475133324249365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Leaderboard_6
-      rect:
-        serializedVersion: 2
-        x: 170
-        y: 28
+        x: 147
+        y: 12
         width: 28
-        height: 53
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,19 +268,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f85d994e907470870800000000000000
-      internalID: 8648959717203891599
+      spriteID: e0cf202ced9b61780800000000000000
+      internalID: -8712572062712792050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leaderboard_7
+      name: Settings_7
       rect:
         serializedVersion: 2
-        x: 198
+        x: 175
         y: 28
-        width: 29
+        width: 26
         height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,52 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ea294c609313ce10800000000000000
-      internalID: 2216636952609368800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Leaderboard_8
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 28
-        width: 31
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b834bbf04b0f9da10800000000000000
-      internalID: 1934842171081048971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Leaderboard_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 28
-        width: 55
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d021f66729d109dc0800000000000000
-      internalID: -3634372384398568947
+      spriteID: 20adb446f21454250800000000000000
+      internalID: 5928216156305086978
       vertices: []
       indices: 
       edges: []

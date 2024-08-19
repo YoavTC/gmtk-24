@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: d044cab805cffbf479ce451ca2514194
+guid: 138ed6a320794dc40b00f2d18b6beca6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 903322845347203174
-    second: Iceberg_0
+      213: 3139213611540756866
+    second: PLAY_0
+  - first:
+      213: 4158842258382604556
+    second: PLAY_1
+  - first:
+      213: -2403774915281278843
+    second: PLAY_2
+  - first:
+      213: -5563181700687521779
+    second: PLAY_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Iceberg_0
+      name: PLAY_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 252
-        height: 266
+        x: 12
+        y: 41
+        width: 41
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6684a62875f398c00800000000000000
-      internalID: 903322845347203174
+      spriteID: 28935fdb52ab09b20800000000000000
+      internalID: 3139213611540756866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PLAY_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 41
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0947cfdffc27b930800000000000000
+      internalID: 4158842258382604556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PLAY_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 41
+        width: 43
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5882aa6437314aed0800000000000000
+      internalID: -2403774915281278843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PLAY_3
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 41
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08119dd7bb9bc2b0800000000000000
+      internalID: -5563181700687521779
       vertices: []
       indices: 
       edges: []

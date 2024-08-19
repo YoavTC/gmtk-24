@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: ee825cdabfba00a488294f16e909322d
+guid: a4dcb05f151c4754a9145c44642473f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3139213611540756866
-    second: PLAY_0
+      213: 7424148408830350411
+    second: SettingsIce_0
   - first:
-      213: 4158842258382604556
-    second: PLAY_1
+      213: -7348829755684410663
+    second: SettingsIce_1
   - first:
-      213: -2403774915281278843
-    second: PLAY_2
+      213: -7094291341150381784
+    second: SettingsIce_2
   - first:
-      213: -5563181700687521779
-    second: PLAY_3
+      213: 7760884630505052852
+    second: SettingsIce_3
+  - first:
+      213: -709226431760142411
+    second: SettingsIce_4
+  - first:
+      213: 7976753292939945308
+    second: SettingsIce_5
+  - first:
+      213: 3029765186218115021
+    second: SettingsIce_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PLAY_0
+      name: SettingsIce_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 41
-        width: 41
-        height: 56
+        x: 5
+        y: 28
+        width: 35
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28935fdb52ab09b20800000000000000
-      internalID: 3139213611540756866
+      spriteID: b445d1c94afd70760800000000000000
+      internalID: 7424148408830350411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAY_1
+      name: SettingsIce_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 41
-        width: 34
-        height: 56
+        x: 39
+        y: 29
+        width: 67
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0947cfdffc27b930800000000000000
-      internalID: 4158842258382604556
+      spriteID: 9da2c91e546b30a90800000000000000
+      internalID: -7348829755684410663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAY_2
+      name: SettingsIce_2
       rect:
         serializedVersion: 2
-        x: 85
-        y: 41
-        width: 43
-        height: 56
+        x: 105
+        y: 29
+        width: 15
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5882aa6437314aed0800000000000000
-      internalID: -2403774915281278843
+      spriteID: 8291a95cc930c8d90800000000000000
+      internalID: -7094291341150381784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PLAY_3
+      name: SettingsIce_3
       rect:
         serializedVersion: 2
-        x: 125
-        y: 41
-        width: 42
-        height: 56
+        x: 106
+        y: 63
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +199,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d08119dd7bb9bc2b0800000000000000
-      internalID: -5563181700687521779
+      spriteID: 4bada08d37334bb60800000000000000
+      internalID: 7760884630505052852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SettingsIce_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 29
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf6e9561525826f0800000000000000
+      internalID: -709226431760142411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SettingsIce_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 12
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c55ec967bde13be60800000000000000
+      internalID: 7976753292939945308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SettingsIce_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 29
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf306d6263eb0a20800000000000000
+      internalID: 3029765186218115021
       vertices: []
       indices: 
       edges: []
