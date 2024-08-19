@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Texturelabs_Grunge_285M_0: 1879141195999038734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

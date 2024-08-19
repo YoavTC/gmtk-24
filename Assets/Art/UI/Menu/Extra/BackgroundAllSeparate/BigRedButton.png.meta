@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 047895c958f00f347a48e73fab9b1402
+guid: 6c060578d0bd9fb44bccbdc93e2c87f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6722429417357599540
-    second: BarForSettingsGlassVersion_0
+      213: 7042945108153071567
+    second: BigRedButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BarForSettingsGlassVersion_0
+      name: BigRedButton_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 878
-        height: 65
+        y: 1
+        width: 173
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4336c3920fdda4d50800000000000000
-      internalID: 6722429417357599540
+      spriteID: fc7f900c2419db160800000000000000
+      internalID: 7042945108153071567
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BarForSettingsGlassVersion_0: 6722429417357599540
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

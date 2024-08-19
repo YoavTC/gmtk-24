@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Texturelabs_Metal_244M_0: 174586478429555624
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
