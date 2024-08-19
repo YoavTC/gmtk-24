@@ -22,7 +22,7 @@ public class Grab : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
 		Transform otherTransform = other.transform;
         if (isHolding && (otherTransform.root.gameObject.CompareTag(objectsTag) || otherTransform.root.gameObject.CompareTag(npcTag)))

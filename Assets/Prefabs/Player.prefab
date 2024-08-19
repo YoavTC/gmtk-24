@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsTag: Object
+  npcTag: 
   isHolding: 0
   mouseButton: 1
 --- !u!1 &2480584673736847179
@@ -1217,6 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsTag: Object
+  npcTag: 
   isHolding: 0
   mouseButton: 0
 --- !u!1 &5095572787373362587

@@ -15,6 +15,7 @@ public class Elevator : MonoBehaviour
 	
 	private PlayerMovementController playerController;
 	[SerializeField] private Elevator linkedElevator;
+	[SerializeField] private Transform linkedElevatorObjectExit;
 	[SerializeField] [ReadOnly] private bool canUse;
 	private Vector3 elevatorPosition;
 
@@ -64,8 +65,7 @@ public class Elevator : MonoBehaviour
 		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
 		
 		SetRigidbody2DSleepState(playerTransform, true);
-		//playerTransform.position = elevatorPosition;
-		TeleportPlayer(playerTransform, elevatorPosition);
+		playerTransform.position = elevatorPosition;
 		SetRigidbody2DSleepState(playerTransform, false);
 		
 
@@ -75,51 +75,17 @@ public class Elevator : MonoBehaviour
 			{
 				Transform objectTransform = hand.GetComponent<FixedJoint2D>().connectedBody.transform;
 				
+				//Vector2 objectOffset =  hand.transform.position - objectTransform.position;
+				//Vector2 elevatorOffset = transform.position - elevatorPosition;
+				//Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
+				
+				
 				SetRigidbody2DSleepState(objectTransform.root, true);
-				
-				Vector2 objectOffset =  hand.transform.position - objectTransform.position;
-				Vector2 elevatorOffset = transform.position - elevatorPosition;
-				Vector2 targetPosition = hand.transform.position + (Vector3) objectOffset + (Vector3) elevatorOffset;
-				
-				
-				//objectTransform.root.position = targetPosition;
-				TeleportPlayer(objectTransform.root, targetPosition);
-				
+				objectTransform.root.position = linkedElevatorObjectExit.position;
 				SetRigidbody2DSleepState(objectTransform.root, false);
 				
 				break;
 			}
-		}
-	}
-	
-	private Dictionary<Transform, Vector3> offsets = new Dictionary<Transform, Vector3>();
-	
-	private void TeleportPlayer(Transform playerTransform ,Vector3 newPosition)
-	{
-		// Record offsets before moving the parent
-		RecordOffsets(playerTransform);
-
-		// Move the parent to the new position
-		playerTransform.position = newPosition;
-
-		// Move each child based on its recorded offset
-		foreach (var entry in offsets)
-		{
-			Transform child = entry.Key;
-			Vector3 offset = entry.Value;
-			child.position = playerTransform.position + offset;
-		}
-	}
-	
-	private void RecordOffsets(Transform parent)
-	{
-		offsets.Clear();  // Clear previous offsets
-
-		for (int i = 0; i < parent.childCount; i++)
-		{
-			Transform child = parent.GetChild(i);
-			Vector3 offset = child.position - parent.position;
-			offsets[child] = offset;
 		}
 	}
 	
