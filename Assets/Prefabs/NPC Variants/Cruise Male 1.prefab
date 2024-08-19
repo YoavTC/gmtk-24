@@ -1041,7 +1041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7799334984620940026}
   m_Layer: 3
-  m_Name: Cruise Male 2
+  m_Name: Cruise Male 1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
