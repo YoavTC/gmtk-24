@@ -183,7 +183,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &9964660
 BoxCollider2D:
@@ -517,6 +517,17 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &153569049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6902587577069378916, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
+  m_PrefabInstance: {fileID: 864532329692845230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8f6864e7682024d8aead7fcdf8dca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &153586187
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +624,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &196036562
 BoxCollider2D:
@@ -1205,7 +1216,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &392425471
 BoxCollider2D:
@@ -2122,6 +2133,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890459107}
   m_CullTransparentMesh: 1
+--- !u!114 &926303572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6349102663741224300, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
+  m_PrefabInstance: {fileID: 864532329692845230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8f6864e7682024d8aead7fcdf8dca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &960607172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,7 +3915,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1972424652
 SpriteRenderer:
@@ -4549,6 +4571,10 @@ PrefabInstance:
       propertyPath: npcTag
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 6349102663741224300, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
+      propertyPath: otherHand
+      value: 
+      objectReference: {fileID: 153569049}
     - target: {fileID: 6582468351722869190, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.052707087
@@ -4561,6 +4587,10 @@ PrefabInstance:
       propertyPath: npcTag
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 6902587577069378916, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
+      propertyPath: otherHand
+      value: 
+      objectReference: {fileID: 926303572}
     - target: {fileID: 7188382483971511231, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
