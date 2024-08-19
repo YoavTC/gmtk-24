@@ -744,28 +744,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NPCSpriteSheet_24
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 240
-        width: 102
-        height: 93
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6929331a4ff1206e0800000000000000
-      internalID: -1872899359495712106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: NPCSpriteSheet_25
       rect:
         serializedVersion: 2
@@ -838,7 +816,7 @@ TextureImporter:
         x: 339
         y: 2
         width: 140
-        height: 206
+        height: 315
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
