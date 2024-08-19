@@ -169,8 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsTag: Object
   npcTag: 
-  isHolding: 0
   mouseButton: 1
+  otherHand: {fileID: 0}
+  isHolding: 0
 --- !u!1 &2480584673736847179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1074,7 @@ MonoBehaviour:
   animateInAir: 0
   animator: {fileID: 2440975632331880916}
   rb: {fileID: 2598624187771421316}
+  head: {fileID: 0}
   jumpForce: 10000
   playerSpeed: 10000
   jumpHeight: {x: 0, y: 0}
@@ -1219,8 +1221,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsTag: Object
   npcTag: 
-  isHolding: 0
   mouseButton: 0
+  otherHand: {fileID: 0}
+  isHolding: 0
 --- !u!1 &5095572787373362587
 GameObject:
   m_ObjectHideFlags: 0
