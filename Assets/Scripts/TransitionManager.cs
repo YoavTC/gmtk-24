@@ -51,6 +51,8 @@ public class TransitionManager : Singleton<TransitionManager>
 	
 	public void ElevatorDoorTransition(Action midCallback = null, Action endCallback = null)
 	{
+		leftDoor.DOKill();
+		rightDoor.DOKill();
 		StartCoroutine(DoorCoroutine(defaultDoorClosedTime, defaultDoorTransitionTime, midCallback, endCallback));
 	}
 	

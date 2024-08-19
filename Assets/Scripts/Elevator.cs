@@ -16,6 +16,8 @@ public class Elevator : MonoBehaviour
 	[SerializeField] [Tag] private string npcTag;
 	[SerializeField] private string[] unsafeLayerMasks;
 	[SerializeField] private float unsafeCheckRadius;
+	[SerializeField] private float useCooldown;
+	public float elapsedTime;
 	
 	[Header("Components")]
 	[SerializeField] private CinemachineCamera cinemachineCamera;
@@ -60,8 +62,10 @@ public class Elevator : MonoBehaviour
 	
 	private void Update()
 	{
-		if (canUse && Input.GetButtonDown("Use")) 
+		elapsedTime += Time.deltaTime;
+		if (useCooldown <= elapsedTime && canUse && Input.GetButtonDown("Use")) 
 		{
+			elapsedTime = 0f;
 			StartCoroutine(UseElevator());
 			canUse = false;
 		}
@@ -82,7 +86,7 @@ public class Elevator : MonoBehaviour
 				callbackReceived = true;
 			});
 
-			
+			linkedElevator.elapsedTime = 0f;
 			
 			yield return new WaitUntil(() => callbackReceived);
 			
