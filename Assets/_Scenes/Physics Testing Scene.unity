@@ -2179,7 +2179,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -1440, y: 0}
-  m_SizeDelta: {x: 960, y: 1080}
+  m_SizeDelta: {x: 961.073, y: 1080}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &960607174
 MonoBehaviour:
@@ -2194,14 +2194,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2444818720590347250, guid: 403fcf06e36b4be49acc0c1db685fee3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2477,7 +2477,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 1440, y: 0}
-  m_SizeDelta: {x: 960, y: 1080}
+  m_SizeDelta: {x: 961.073, y: 1080}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1070010387
 MonoBehaviour:
@@ -2492,14 +2492,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.3411901, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2444818720590347250, guid: 403fcf06e36b4be49acc0c1db685fee3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2626,7 +2626,7 @@ Transform:
   m_GameObject: {fileID: 1285182329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 122.97325, y: -75.37452, z: 0}
+  m_LocalPosition: {x: 122.97325, y: -74.77452, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2651,7 +2651,8 @@ MonoBehaviour:
   npcTag: NPC
   unsafeLayerMasks:
   - Objects
-  unsafeCheckRadius: 1
+  unsafeCheckRadius: 3
+  cinemachineCamera: {fileID: 2058670976}
   linkedElevator: {fileID: 1639868521}
   linkedElevatorObjectExit: {fileID: 537265793}
   canUse: 0
@@ -3056,7 +3057,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 7
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1554930682
 RectTransform:
@@ -3093,7 +3094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultFadeTransitionTime: 1
   defaultDoorTransitionTime: 0.2
-  defaultDoorClosedTime: 0.3
+  defaultDoorClosedTime: 0.5
   easeType: 2
   blackScreen: {fileID: 867210324}
   leftDoor: {fileID: 960607173}
@@ -3198,7 +3199,8 @@ MonoBehaviour:
   npcTag: NPC
   unsafeLayerMasks:
   - Objects
-  unsafeCheckRadius: 1
+  unsafeCheckRadius: 3
+  cinemachineCamera: {fileID: 2058670976}
   linkedElevator: {fileID: 1285182332}
   linkedElevatorObjectExit: {fileID: 1286313954}
   canUse: 0
@@ -4559,6 +4561,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5870859308011958390, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1496199491}
     - target: {fileID: 5925907988073945754, guid: f435e0171f7e83f4caa7be0859045cbe, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.20200348

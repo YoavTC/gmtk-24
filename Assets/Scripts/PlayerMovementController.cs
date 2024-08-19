@@ -13,6 +13,7 @@ public class PlayerMovementController : MonoBehaviour
 	{
 		get {return rb;}
 	}
+	public Transform head;
     [Header("Movement")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float playerSpeed;

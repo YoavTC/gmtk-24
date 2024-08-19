@@ -1,8 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
 using NaughtyAttributes;
-using System.Collections.Generic;
 using System.Collections;
+using Unity.Cinemachine;
 
 
 public class Elevator : MonoBehaviour
@@ -18,6 +18,7 @@ public class Elevator : MonoBehaviour
 	[SerializeField] private float unsafeCheckRadius;
 	
 	[Header("Components")]
+	[SerializeField] private CinemachineCamera cinemachineCamera;
 	[SerializeField] private Elevator linkedElevator;
 	[SerializeField] private Transform linkedElevatorObjectExit;
 	[SerializeField] [ReadOnly] private bool canUse;
@@ -61,21 +62,33 @@ public class Elevator : MonoBehaviour
 	{
 		if (canUse && Input.GetButtonDown("Use")) 
 		{
-			UseElevator();
+			StartCoroutine(UseElevator());
 			canUse = false;
 		}
 	}
 	
-	private void UseElevator() 
+	private IEnumerator UseElevator()
 	{
 		Transform playerTransform = playerController.transform;
-		Grab[] hands = playerController.GetComponentsInChildren<Grab>();
+		Grab[] hands = playerTransform.GetComponentsInChildren<Grab>();
 		
 		Vector2 safePosition = FindSafePosition(elevatorPosition);
 		if (safePosition != Vector2.zero) 
 		{
+			bool callbackReceived = false;
+			TransitionManager.Instance.ElevatorDoorTransition(() => {
+				cinemachineCamera.Target.TrackingTarget = null;
+				cinemachineCamera.ForceCameraPosition(safePosition, Quaternion.identity);
+				callbackReceived = true;
+			});
+
+			
+			
+			yield return new WaitUntil(() => callbackReceived);
+			
 			SetRigidbody2DSleepState(playerTransform, true);
 			playerTransform.position = safePosition;
+			cinemachineCamera.Target.TrackingTarget = playerController.head;
 			SetRigidbody2DSleepState(playerTransform, false);
 		}
 		
@@ -94,6 +107,7 @@ public class Elevator : MonoBehaviour
 				Vector2 objectSafePosition = FindSafePosition(linkedElevatorObjectExit.position);
 				if (objectSafePosition != Vector2.zero)
 				{
+					hand.DropObject();
 					SetRigidbody2DSleepState(objectTransform.root, true);
 					objectTransform.root.position =objectSafePosition;
 					SetRigidbody2DSleepState(objectTransform.root, false);

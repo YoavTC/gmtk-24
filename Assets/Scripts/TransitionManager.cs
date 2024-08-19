@@ -32,8 +32,10 @@ public class TransitionManager : Singleton<TransitionManager>
 	[Button]
 	public void TestDoors()
 	{
-		ElevatorDoorTransition(defaultDoorClosedTime, defaultDoorTransitionTime, (() => {
-			Debug.Log("Callback!");
+		ElevatorDoorTransition((() => {
+			Debug.Log("Midway callback!");
+		}), (() => {
+			Debug.Log("End callback!!");
 		}));
 	}
 	
@@ -47,14 +49,12 @@ public class TransitionManager : Singleton<TransitionManager>
 		});
 	}
 	
-	public void ElevatorDoorTransition(float closedTime = -1f ,float transitionTime = -1f, Action callback = null)
+	public void ElevatorDoorTransition(Action midCallback = null, Action endCallback = null)
 	{
-		if (transitionTime == -1) transitionTime = defaultDoorTransitionTime;
-		if (closedTime == -1) closedTime = defaultDoorClosedTime;
-		StartCoroutine(DoorCoroutine(closedTime, transitionTime, callback));
+		StartCoroutine(DoorCoroutine(defaultDoorClosedTime, defaultDoorTransitionTime, midCallback, endCallback));
 	}
 	
-	private IEnumerator DoorCoroutine(float closedTime ,float transitionTime , Action callback = null)
+	private IEnumerator DoorCoroutine(float closedTime ,float transitionTime , Action midCallback = null, Action endCallback = null)
 	{
 		float leftDoorX = leftDoor.anchoredPosition.x;
 		float rightDoorX = rightDoor.anchoredPosition.x;
@@ -63,12 +63,13 @@ public class TransitionManager : Singleton<TransitionManager>
 		rightDoor.DOAnchorPosX(0f, transitionTime).SetEase(easeType);
 		
 		yield return HelperFunctions.GetWait(closedTime + transitionTime);
+		if (midCallback != null) midCallback?.Invoke();
 		
 		leftDoor.DOAnchorPosX(leftDoorX, transitionTime).SetEase(easeType);
 		rightDoor.DOAnchorPosX(rightDoorX, transitionTime).SetEase(easeType);
 		
 		yield return HelperFunctions.GetWait(transitionTime);
 		
-		if (callback != null) callback?.Invoke();
+		if (endCallback != null) endCallback?.Invoke();
 	}
 }

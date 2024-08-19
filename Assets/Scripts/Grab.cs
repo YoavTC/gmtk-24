@@ -17,7 +17,7 @@ public class Grab : MonoBehaviour
 			if (GetComponent<FixedJoint2D>() != null) 
 			{
 				return GetComponent<FixedJoint2D>().connectedBody;
-			} else return null;
+			} return null;
 		}
 	}
 
@@ -47,5 +47,11 @@ public class Grab : MonoBehaviour
 		
 		if (fixedJoint2D == null) return;
 		fixedJoint2D.connectedBody = otherRb;
+	}
+
+	public void DropObject()
+	{
+		isHolding = false;
+		Destroy(GetComponent<FixedJoint2D>());
 	}
 }
