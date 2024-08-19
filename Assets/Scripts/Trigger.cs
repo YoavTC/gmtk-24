@@ -15,7 +15,7 @@ public class Trigger : MonoBehaviour
 	
 	private void Start()
 	{
-		_otherType = otherType.GetType();
+		if (otherType != null) _otherType = otherType.GetType();
 	}
 	
     public UnityEvent enterTrigger;
