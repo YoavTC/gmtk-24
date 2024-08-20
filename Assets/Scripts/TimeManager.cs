@@ -22,7 +22,7 @@ public class TimeManager : MonoBehaviour
 	
 	private void Start()
 	{
-		remainingTime = (float) totalTime - 0.5f;
+		remainingTime = totalTime - 0.5f;
 		Time.timeScale = 0f;
 	}
 	

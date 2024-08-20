@@ -366,29 +366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217ec1c444b07b14c8ac5b227326131b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 10
+  totalTime: 5
   remainingTime: 0
   gameActive: 0
   waterBar: {fileID: 1975403204}
   timeEvents:
     _serializedList:
-    - Key: 0.9
-      Value:
-        m_PersistentCalls:
-          m_Calls: []
-    - Key: 0.8
-      Value:
-        m_PersistentCalls:
-          m_Calls: []
-    - Key: 0.75
-      Value:
-        m_PersistentCalls:
-          m_Calls: []
-    - Key: 0
-      Value:
-        m_PersistentCalls:
-          m_Calls: []
-    - Key: 0.2
+    - Key: 0.7
       Value:
         m_PersistentCalls:
           m_Calls:
@@ -405,7 +389,24 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - Key: 1
+    - Key: 0.2
+      Value:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 17332748}
+            m_TargetAssemblyTypeName: Unity.Cinemachine.CinemachineImpulseSource,
+              Unity.Cinemachine
+            m_MethodName: GenerateImpulseWithForce
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 5
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Key: 0
       Value:
         m_PersistentCalls:
           m_Calls:
@@ -417,7 +418,7 @@ MonoBehaviour:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
-              m_FloatArgument: 1
+              m_FloatArgument: 5
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
