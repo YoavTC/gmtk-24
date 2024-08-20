@@ -726,20 +726,34 @@ TextureImporter:
       name: SpriteSheet4_24
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 864
         y: 193
         width: 162
         height: 92
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 625
+        y: 934
+        width: 163
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 840001d9c122bd84ca6766329bf07f4a
       internalID: -1415815343
+=======
+      spriteID: f913b9e280a662e42a9acae50fbffe4d
+      internalID: -2120380503
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -748,20 +762,34 @@ TextureImporter:
       name: SpriteSheet4_25
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 1048
         y: 152
         width: 46
         height: 95
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 836
+        y: 940
+        width: 107
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 8ecc86bb4d897784fb1e6a4634b8c9a9
       internalID: -1562641036
+=======
+      spriteID: a09d28961855e384fa2ab8c74b733f65
+      internalID: -1837116196
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -770,20 +798,34 @@ TextureImporter:
       name: SpriteSheet4_26
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 1197
         y: 47
         width: 44
         height: 167
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 842
+        y: 1082
+        width: 235
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: abe3f9146ae8f4d49a8faf94fc02a82f
       internalID: -5918266
+=======
+      spriteID: d0430f16a2d745346a24c792b18e5ec7
+      internalID: 189559958
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -792,20 +834,34 @@ TextureImporter:
       name: SpriteSheet4_27
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 765
         y: 43
         width: 80
         height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 315
+        y: 491
+        width: 274
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 76038f920d5f8ae4aa7bbf7ff3ec1f7e
       internalID: 563217726
+=======
+      spriteID: 9b9622fcd13db60439e6837837654e44
+      internalID: 1892307324
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -814,20 +870,34 @@ TextureImporter:
       name: SpriteSheet4_28
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 874
         y: 46
         width: 131
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 300
+        y: 1014
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: ec99e555b04c07149ac6bdfb64db5b7d
       internalID: 1264913398
+=======
+      spriteID: aa2c7462ea5da5b4393cfba77b928987
+      internalID: 1986961908
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -836,20 +906,34 @@ TextureImporter:
       name: SpriteSheet4_29
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 1113
         y: 155
         width: 20
         height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 14
+        y: 1014
+        width: 257
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 127c6282ce227384d89a39baec5b9561
       internalID: 1670244878
+=======
+      spriteID: 140069df5976f76439d9de0f36a11dfb
+      internalID: 1945725964
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -858,18 +942,28 @@ TextureImporter:
       name: SpriteSheet4_30
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
         x: 647
         y: 39
         width: 84
         height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+=======
+        x: 14
+        y: 726
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: a4e617f2455f3df489524751519440ef
       internalID: -1713154981
       vertices: []
@@ -894,6 +988,10 @@ TextureImporter:
       bones: []
       spriteID: 25bdf5ecf6f459d49a0c6f78e4a592d8
       internalID: 741635782
+=======
+      spriteID: d35dccaa9b04bee468aa2d34cb63e031
+      internalID: 1068930642
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -929,6 +1027,7 @@ TextureImporter:
       SpriteSheet4_21: -4205432398812631792
       SpriteSheet4_22: -3282180587399823639
       SpriteSheet4_23: 3762672817881618270
+<<<<<<< Updated upstream
       SpriteSheet4_24: -1415815343
       SpriteSheet4_25: -1562641036
       SpriteSheet4_26: -5918266
@@ -938,6 +1037,16 @@ TextureImporter:
       SpriteSheet4_3: -5180807248708655695
       SpriteSheet4_30: -1713154981
       SpriteSheet4_31: 741635782
+=======
+      SpriteSheet4_24: -2120380503
+      SpriteSheet4_25: -1837116196
+      SpriteSheet4_26: 189559958
+      SpriteSheet4_27: 1892307324
+      SpriteSheet4_28: 1986961908
+      SpriteSheet4_29: 1945725964
+      SpriteSheet4_3: -5180807248708655695
+      SpriteSheet4_30: 1068930642
+>>>>>>> Stashed changes
       SpriteSheet4_4: 464094835188556300
       SpriteSheet4_5: -7441119743161253098
       SpriteSheet4_6: -5141667860506234895
