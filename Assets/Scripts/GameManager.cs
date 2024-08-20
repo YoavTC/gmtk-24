@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -78,5 +79,12 @@ public class GameManager : Singleton<GameManager>
 			shipWealth += disposableObjects[i]._price;
 			shipWeight += disposableObjects[i]._weight;
 		}
+	}
+
+	public void THATSIT()
+	{
+		int score = shipWealth - disposedMoney;
+		PlayerPrefs.SetInt("score", score);
+		SceneManager.LoadScene("Outro");
 	}
 }
