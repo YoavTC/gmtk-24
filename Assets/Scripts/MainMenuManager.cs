@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] [Scene] private string gameScene;
     [SerializeField] [Scene] private string aboutScene;
     [SerializeField] [Scene] private string overScene;
+    [SerializeField] [Scene] private string menuScene;
     [SerializeField] private float sceneTransitionDuration;
     
     [Header("Components")]
@@ -48,6 +49,11 @@ public class MainMenuManager : MonoBehaviour
     public void GoToOverScene()
     {
         SceneManager.LoadScene(overScene);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(menuScene);
     }
 
     private void AdjustVolume()
