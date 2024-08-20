@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4956107512153624110}
   - component: {fileID: 758915640414172386}
   - component: {fileID: 8101324675361009987}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -766620359
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1633135034, guid: 852ab12ca63597f4fb42fad97c1f136a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
