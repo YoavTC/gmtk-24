@@ -39,7 +39,7 @@ public class TimeManager : MonoBehaviour
 	
 	private void UpdateBar(float progress)
 	{
-		waterBar.value = progress;
+		waterBar.value = 1 - progress;
 	}
 	
 	private void CallEvents(float progress)
