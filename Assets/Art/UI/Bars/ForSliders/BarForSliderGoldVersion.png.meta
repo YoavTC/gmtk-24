@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fef093a85e020454a80a74ba1ca2ab51
+guid: 72cf7222a8a79f642a02fd68c62b864d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3495552025246500597
-    second: SliderKnobRed_0
+      213: -8506719536122338975
+    second: BarForSliderGoldVersion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SliderKnobRed_0
+      name: BarForSliderGoldVersion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 857
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f607b6fb02b28030800000000000000
-      internalID: 3495552025246500597
+      spriteID: 1616d8507af02f980800000000000000
+      internalID: -8506719536122338975
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SliderKnobRed_0: 3495552025246500597
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

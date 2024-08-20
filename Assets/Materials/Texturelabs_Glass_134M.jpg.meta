@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Texturelabs_Glass_134M_0: -6616323590582758357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
