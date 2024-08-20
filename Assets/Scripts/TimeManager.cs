@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +11,10 @@ public class TimeManager : MonoBehaviour
 	[Header("Settings")]
     [SerializeField] private int totalTime;
 	[SerializeField] private float remainingTime;
-	private bool gameActive;
+	[SerializeField] [ReadOnly] private bool gameActive;
+	
+	[Header("Components")]
+	[SerializeField] private Slider waterBar;
 
 	[Header("Events")]
 	[SerializedDictionary("Time %", "Event")]
@@ -18,23 +22,31 @@ public class TimeManager : MonoBehaviour
 	
 	private void Start()
 	{
-		remainingTime = totalTime;
+		remainingTime = (float) totalTime - 0.5f;
 		Time.timeScale = 0f;
 	}
 	
 	private void Update()
 	{
 		if (!gameActive) return;
-		CallEvents();
+		
+		float timeProgress = remainingTime / totalTime;
+		UpdateBar(timeProgress);
+		CallEvents(timeProgress);
+		
 		remainingTime -= Time.deltaTime;
 	}
 	
-	private void CallEvents()
+	private void UpdateBar(float progress)
 	{
-		float timeProgress = remainingTime / totalTime;
+		waterBar.value = progress;
+	}
+	
+	private void CallEvents(float progress)
+	{
 		foreach (KeyValuePair<float, CustomUnityEvent> timeEvent in timeEvents)
 		{
-			if (timeProgress <= timeEvent.Key && !timeEvent.Value.HasBeenInvoked) 
+			if (progress <= timeEvent.Key && !timeEvent.Value.HasBeenInvoked) 
 			{
 				timeEvent.Value?.Invoke();
 			}
