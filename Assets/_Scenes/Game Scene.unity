@@ -5941,6 +5941,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -76.63
       objectReference: {fileID: 0}
+    - target: {fileID: 5046521690938887448, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.43
+      objectReference: {fileID: 0}
     - target: {fileID: 5345697852236748909, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -76.63
@@ -6026,11 +6030,10 @@ PrefabInstance:
     - {fileID: 4887170409101958167, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
     - {fileID: 389191950186708678, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
     - {fileID: 2335465853458030034, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
+    - {fileID: 7446032596387060702, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
+    - {fileID: 5964031974712680887, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7446032596387060702, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25c88672f3a679847b9f34d84ff9b3a6, type: 3}
 --- !u!1 &1639868520
 GameObject:
