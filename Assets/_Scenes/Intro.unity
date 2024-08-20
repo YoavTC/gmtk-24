@@ -1416,6 +1416,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1291458903}
   - component: {fileID: 1291458902}
+  - component: {fileID: 1291458904}
+  - component: {fileID: 1291458905}
   m_Layer: 0
   m_Name: Timeline Manager
   m_TagString: Untagged
@@ -1436,7 +1438,7 @@ PlayableDirector:
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
-  m_InitialTime: 20
+  m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -5110463360375003195, guid: abdf98c94a2f75047a7a3acaf5aac389, type: 2}
     value: {fileID: 1874778384}
@@ -1474,6 +1476,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291458904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291458901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6934c76f439a646a6d156302c4e84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 1291458902}
+  aliuaosiuhdaps:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1291458905}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: GoToGameScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1291458905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291458901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1541913cb5bc35148a6b2f378153df47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introScene: Game Scene
+  gameScene: Game Scene
+  aboutScene: Game Scene
+  overScene: Game Scene
+  menuScene: Game Scene
+  sceneTransitionDuration: 0
+  volumeSlider: {fileID: 0}
+  fade: {fileID: 0}
 --- !u!1 &1336473935
 GameObject:
   m_ObjectHideFlags: 0

@@ -956,6 +956,8 @@ MonoBehaviour:
   introScene: Intro
   gameScene: Game Scene
   aboutScene: Game Scene
+  overScene: Game Scene
+  menuScene: Game Scene
   sceneTransitionDuration: 0.7
   volumeSlider: {fileID: 484525283}
   fade: {fileID: 1685943331}
