@@ -90,10 +90,10 @@ public class Elevator : MonoBehaviour
 			
 			yield return new WaitUntil(() => callbackReceived);
 			
-			SetRigidbody2DSleepState(playerTransform, true);
+			SetRigidbody2DSleepState(playerTransform.GetChild(0), true);
 			playerTransform.position = safePosition;
 			cinemachineCamera.Target.TrackingTarget = playerController.head;
-			SetRigidbody2DSleepState(playerTransform, false);
+			SetRigidbody2DSleepState(playerTransform.GetChild(0), false);
 		}
 		
 
@@ -123,6 +123,7 @@ public class Elevator : MonoBehaviour
 	
 	private void SetRigidbody2DSleepState(Transform targetRb, bool sleep)
 	{
+		Debug.Log("AHAHAHAH: " + targetRb);
 		foreach (Rigidbody2D rb in targetRb.GetComponentsInChildren<Rigidbody2D>()) 
 		{
 			if (sleep) rb.Sleep();
@@ -132,6 +133,7 @@ public class Elevator : MonoBehaviour
 	
 	private Vector2 FindSafePosition(Vector2 targetPosition)
 	{
+		return targetPosition;
 		bool safe = false;
 		int maxTries = 500;
 		int currentTries = 0;
