@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] [Scene] private string introScene;
     [SerializeField] [Scene] private string gameScene;
     [SerializeField] [Scene] private string aboutScene;
+    [SerializeField] [Scene] private string overScene;
     [SerializeField] private float sceneTransitionDuration;
     
     [Header("Components")]
@@ -21,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        volumeSlider.onValueChanged.AddListener(delegate { AdjustVolume(); });
+        if (volumeSlider != null) volumeSlider.onValueChanged.AddListener(delegate { AdjustVolume(); });
     }
 
     public void GoToIntroScene()
@@ -42,6 +43,11 @@ public class MainMenuManager : MonoBehaviour
     public void GoToAboutScene()
     {
         SceneManager.LoadScene(aboutScene);
+    }
+    
+    public void GoToOverScene()
+    {
+        SceneManager.LoadScene(overScene);
     }
 
     private void AdjustVolume()
