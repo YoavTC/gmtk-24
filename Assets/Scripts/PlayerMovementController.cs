@@ -1,4 +1,5 @@
 using UnityEngine;
+using NaughtyAttributes;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float playerSpeed;
     private Vector2 movement;
+	
     [Header("Jumping")]
     [SerializeField] private Vector2 jumpHeight;
     [SerializeField] private Transform groundCheck;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8992145ced672cd46a425fb2590b80bb
+guid: 02fa5409c7fd33049898fab8d165622b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 243052
   packageName: Serialized Dictionary
   packageVersion: 1.0.13
-  assetPath: Assets/External Packages/SerializedCollections/Editor/Scripts/KeyListGenerators/KeyListGeneratorData.cs
+  assetPath: Assets/External Packages/SerializedCollections/Sample/SerializedDictionarySample.cs
   uploadId: 632226
